@@ -19,8 +19,14 @@ var locationSchema = new mongoose.Schema({
     adress: String,
     rating: {type: Number, "default": 0, min: 0, max: 5},
     facilies: [String],
-    ciirds: {type:[NUmber], index: '2dsphere'},
+    ciirds: {type:[Number], index: '2dsphere'},
     openingTimes: [openingTimeSchema],
     reviews: [reviewSchema]
 });
 
+
+module.exports.Location = {
+    openingTimeSchema: openingTimeSchema,
+    reviewSchema: reviewSchema,
+    locationSchema: locationSchema
+}
