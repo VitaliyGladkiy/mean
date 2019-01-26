@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var readline = require('readline');
 
 
-var dbUrl = "http://localhost:27027/db_mean";
+var dbUrl = "mongodb://localhost:27027/db_mean";
 mongoose.connect(dbUrl);
 
 mongoose.connection.on('connected', function () {

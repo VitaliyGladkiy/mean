@@ -10,6 +10,7 @@ var usersRouter = require('./server/routes/users');
 var ctrLocations = require('./server/controllers/locations/locations');
 var ctrOther = require('./server/controllers/others/other');
 var authRouter = require('./server/auth/authRouter');
+var serviceCtrl = require('./server/service/serviceController');
 var app = express();
 
 // view engine setup
@@ -26,6 +27,7 @@ app.use(redisSession);
 app.use(indexRouter);
 app.use(usersRouter);
 app.use(authRouter);
+app.use('/service', serviceCtrl.placeSearch);
 app.use('/location/all', ctrLocations.homeList);
 app.use('/location/add', ctrLocations.addReview);
 app.use('/location/info', ctrLocations.locationInfo);
